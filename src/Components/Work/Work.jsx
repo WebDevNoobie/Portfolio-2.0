@@ -89,7 +89,7 @@ function Work() {
         {projectsDisplay.map((project) => (
           <div className="projectContainer">
             <div className="projectImageContainer">
-              <img src={project.image} alt="image" />
+              <img src={project.image} alt="" />
               <div className="hoverLayer">
                 <FiEye
                   className="svg"
