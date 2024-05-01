@@ -1,0 +1,206 @@
+.navbarContainer {
+  width: 100%;
+  height: 80px;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  opacity: 0;
+  transform: translate(0, -20%);
+  animation: navbarAppear 0.5s 0s 1 ease normal both;
+
+  &.active {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  .logo {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translate(0, -50%);
+
+    h3 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .linksDiv {
+    @media screen and (max-width: 800px) {
+      display: none;
+    }
+
+    width: 50%;
+    max-width: 400px;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    .link {
+      text-decoration: none;
+      transition: 0.5s;
+      color: #fff;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      opacity: 0.6;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  .socials {
+    @media screen and (max-width: 800px) {
+      display: none;
+    }
+
+    width: 7%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    right: 5%;
+
+    .svg {
+      cursor: pointer;
+      color: #fff;
+      opacity: 0.6;
+      transition: 0.3s;
+      z-index: 5;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  .openMenuButton {
+    @media screen and (max-width: 800px) {
+      display: block;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: white;
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%);
+      right: 5%;
+      cursor: pointer;
+    }
+
+    display: none;
+  }
+
+  .menuOpen {
+    width: 0;
+    height: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    .closeMenuButton {
+      position: absolute;
+      right: 80px;
+      top: 32px;
+      color: white;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      opacity: 0.6;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    .linksDivMenu {
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      .linkMenu {
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 24px;
+        color: white;
+        opacity: 0.6;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+@keyframes menuAppear {
+  0% {
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+  }
+  100% {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+  }
+}
+
+@keyframes menuDisappear {
+  0% {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+  }
+  100% {
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+  }
+}
+
+@keyframes menuElementsAppear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes menuElementsDisappear {
+  0% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes navbarAppear {
+  0% {
+    transform: translate(0, -20%);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}

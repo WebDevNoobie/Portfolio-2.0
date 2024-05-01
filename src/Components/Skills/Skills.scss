@@ -1,0 +1,164 @@
+.skills {
+  width: 100%;
+  max-width: 1224px;
+  min-height: 100vh;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 110px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media screen and (max-width: 500px) {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .sectionHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 48px;
+
+    span {
+      color: crimson;
+      letter-spacing: 5px;
+      font-size: 12px;
+    }
+
+    h1 {
+      color: white;
+      font-size: 48px;
+    }
+  }
+
+  .buttonsContainer {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 80px;
+
+    button {
+      background-color: white;
+      padding: 10px 16px;
+      border-radius: 10px;
+      font-size: 13px;
+      cursor: pointer;
+      border: none;
+      margin-top: 16px;
+      transition: all 0.75s;
+
+      &.active {
+        color: white;
+        background-color: crimson;
+      }
+
+      &:hover {
+        scale: 1.1;
+      }
+    }
+  }
+
+  .skillsContainer {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 700px;
+    row-gap: 64px;
+
+    @media screen and (max-width: 500px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+
+    .tools {
+      display: flex;
+      justify-content: center;
+      transition: all 1s;
+
+      svg {
+        width: 100px;
+        height: 100px;
+        color: #fff;
+      }
+
+      &.active {
+        animation: focus 1s linear 0s 1 normal both;
+      }
+    }
+  }
+  .experienceContainer {
+    width: 100%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #fff;
+
+    .experience {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 48px;
+
+      span {
+        font-size: 28px;
+        padding-left: 40px;
+
+        @media screen and (max-width: 405px) {
+          font-size: 16px;
+        }
+      }
+      .position {
+        width: 300px;
+        padding-left: 40px;
+
+        h3 {
+          font-size: 18px;
+          @media screen and (max-width: 405px) {
+            font-size: 13px;
+          }
+        }
+
+        p {
+          font-size: 12px;
+          opacity: 0.6;
+
+          @media screen and (max-width: 405px) {
+            font-size: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  .highlightsContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+    text-align: center;
+    flex-wrap: wrap;
+    gap: 64px;
+    color: #fff;
+
+    .number {
+      color: crimson;
+      font-size: 27px;
+    }
+  }
+}
+
+@keyframes focus {
+  0% {
+    scale: 1;
+  }
+  50% {
+    scale: 1.1;
+  }
+  100% {
+    scale: 1;
+  }
+}
